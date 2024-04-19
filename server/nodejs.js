@@ -27,7 +27,7 @@ const server = http.createServer((request, response) => {
         response.end(JSON.stringify(clients));
       });
   } else if (request.method === "PUT" && request.url.includes("update")) {
-    response.writeHead(201, { "Content-Type": "text/plain" });
+    response.writeHead(201, { "Content-Type": "application/json" });
     let params = +request.url.split("/")[2];
     console.log(params, "this is params");
 
@@ -54,6 +54,27 @@ const server = http.createServer((request, response) => {
         clients.splice(index, 1, JSON.parse(body));
         response.end(JSON.stringify(clients));
       });
+  } else if (request.method === "DELETE" && request.url.includes("delete")) {
+    response.writeHead(202, { "Content-Type": "application/json" });
+    let params = +request.url.split("/")[2];
+    console.log(params, "this is params");
+
+    let index = 0;
+    let element = null;
+    for (let i = 0; i < clients.length; i++) {
+      if (clients[i].id === params) {
+        index = i;
+        element = clients[i];
+      }
+    }
+
+    if (!element) {
+      response.writeHead(404, { "Content-Type": "text/plain" });
+      response.end("element not found");
+    }
+
+    clients.splice(index, 1);
+    response.end(JSON.stringify(clients));
   } else {
     response.writeHead(404, { "Content-type": "text/plain" });
     response.end("404 no found");

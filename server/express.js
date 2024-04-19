@@ -11,7 +11,6 @@ const clients = [
   { id: 3, name: "riadth" },
   { id: 4, name: "meycem" },
   { id: 5, name: "Ghada" }
-  
 ];
 app.get("/", (req, res) => {
   res.status(200).send(JSON.stringify(clients));
@@ -25,10 +24,9 @@ app.post("/client", (req, res) => {
 app.delete("/client/:id", (req, res) => {
   const { id } = req.params;
   let index = 0;
-  for (let i = 0; i < clients.length; i++) {
-    clients[i].id === +id && (index = i);
-  }
-  clients.splice(index, 1);
+  clients.forEach((e, i) => {
+    e.id === +id && clients.splice(i, 1);
+  });
   res.status(202).send(clients);
 });
 app.put("/client/:id", (req, res) => {
