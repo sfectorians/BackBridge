@@ -1,37 +1,50 @@
-const { clients } = require("../models/client.model");
+const { Client } = require("../models/client.model");
 
 
 
 
-const fetchClient =  (req, res) => {
-    res.status(200).send(model.clients);
+
+const fetchClient =  async (req, res) => {
+   try {
+    const response = await Client.find({})
+    res.status(200).send(response)
+   } catch (error) {
+    console.log(error)
+   }
   }
   
- const createClient = (req, res) => {
-    clients.push(req.body);
-    res.status(201).send(clients);
+ const createClient = async (req, res) => {
+   try {
+    const response = await Client.create(req.body)
+    res.status(201).send(response)
+    
+   } catch (error) {
+    console.log(error)
+   }
   }
   
- const deleteClient = (req, res) => {
-    const { id } = req.params;
-
-    clients.forEach((e, i) => {
-      e.id === +id && clients.splice(i, 1) 
-    });
-
-    res.status(202).send(clients);
+ const deleteClient =async (req, res) => {
+  try {
+    const response = await Client.deleteOne({
+      id : +req.params.id
+    })
+    res.status(202).send(response)
+  } catch (error) {
+    console.log(error)
+  }
   }
 
 
-  const updateClient = (req, res) => {
-    const { id } = req.params;
-    console.log(req.body, "this is the body ");
-    let index = 0;
-    for (let i = 0; i < clients.length; i++) {
-      clients[i].id === +id && (index = i);
+  const updateClient =async (req, res) => {
+    try {
+      const response = await Client.updateOne({
+        id : +req.params.id
+      },req.body)
+      res.status(201).send(response)
+    } catch (error) {
+      console.log(error)
     }
-    clients.splice(index, 1, req.body);
-    res.status(201).send(clients);
+    
   }
 
 

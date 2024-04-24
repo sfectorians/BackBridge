@@ -1,6 +1,7 @@
 const express = require("express");
 const router = require("./routes/client.route");
 const productRouter = require("./routes/product.route");
+const db = require("./models/main")
 const PORT = 4001;
 const host = "127.0.0.1";
 

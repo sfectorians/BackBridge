@@ -1,15 +1,14 @@
-const clients = [
-    { id: 1, name: "sana" },
-    { id: 2, name: "wadie" },
-    { id: 3, name: "riadth" },
-    { id: 4, name: "meycem" },
-    { id: 5, name: "Ghada" }
-  ];
+const { Schema, model } = require("mongoose");
+const db = require("./main")
 
-  module.exports = {clients}
+const clientSchema = new Schema({
+    id : Number , 
+    name : String , 
+    email : String , 
+    password : String , 
+    imageUrl : String
+})
 
+const Client = model("clients",clientSchema)
 
-
-
-
-  
+module.exports = {Client}
