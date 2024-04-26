@@ -14,6 +14,7 @@ const fetchProduct = async (req,res)=>{
 
 const createProduct  = async (req,res) =>{
     try {
+        console.log(req.body,"this is the body")
         const response = await Product.create(req.body)
         res.status(201).send(response)
         
