@@ -4,17 +4,14 @@ const { fetchClient, createClient, updateClient, deleteClient } = require('../co
 const router = express.Router()
 
 
-// routes/sample.js
 /**
  * @swagger
  * /clients/fetchClient:
  *   get:
- *     tags:
- *          [client]
- *     summary: Returns a all clients
- *     responses:
+ *     summary: return all clients
+ *     responses: 
  *       200:
- *         description: A successful response
+ *         description: bingo
  */
 router.get("/fetchClient",fetchClient)
 router.post("/createClient",createClient)
