@@ -3,13 +3,14 @@ const router = require("./routes/client.route");
 const productRouter = require("./routes/product.route");
 const db = require("./models/main");
 const PORT = 4001;
+const cors= require("cors")
 const host = "127.0.0.1";
 swaggerJsdoc = require("swagger-jsdoc"),
 swaggerUi = require("swagger-ui-express");
 
 const app = express();
 app.use(express.json());
-
+app.use(cors())
 const options = {
   definition: {
     openapi: "3.1.0",
