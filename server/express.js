@@ -6,7 +6,6 @@ const PORT = 4001;
 const cors = require("cors");
 const host = "127.0.0.1";
 (swaggerJsdoc = require("swagger-jsdoc")), (swaggerUi = require("swagger-ui-express"));
-
 const app = express();
 app.use(express.json());
 app.use(cors());

@@ -41,6 +41,8 @@ productRouter.get("/", fetchProduct);
  *                 type: string
  *               category: 
  *                 type: string
+ *               users_id:
+ *                 type: number
  *     responses:
  *       201:
  *         description: client created with success       

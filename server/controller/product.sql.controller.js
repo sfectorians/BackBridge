@@ -1,7 +1,7 @@
 const db = require("../models/sqlConnection");
 
 const fetchProduct = (req, res) => {
-  let sql = "select * from products";
+  let sql = "select * from products left join users on products.users_id = users.id";
   db.query(sql, (err, result) => {
     if (err) res.status(400).send(err);
     else res.status(200).send(result);
