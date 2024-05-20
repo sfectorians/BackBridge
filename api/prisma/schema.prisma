@@ -14,18 +14,22 @@ datasource db {
 }
 
 model Products {
-  id Int @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   productName String
-  price Int 
-  imageUrl String 
-  category String 
-  description String 
-  createdAt DateTime @default(now()) 
+  price       Int
+  imageUrl    String
+  category    String
+  description String
+  createdAt   DateTime @default(now())
+
+  Users   Users? @relation(fields: [usersId], references: [id])
+  usersId Int? // foreign key 
 }
 
 model Users {
-  id Int @id @default(autoincrement())
-  userName String 
-  password String 
-  email String @unique
+  id       Int        @id @default(autoincrement()) // primary key
+  userName String
+  password String
+  email    String     @unique
+  products Products[]
 }

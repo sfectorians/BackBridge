@@ -23,5 +23,7 @@
         "titleBar.inactiveBackground": "#42b88499",
         "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "#42b884"
+    "peacock.color": "#42b884",
+    "prisma-smart-formatter.typescript.defaultFormatter": "esbenp.prettier-vscode",
+    "prisma-smart-formatter.prisma.defaultFormatter": "Prisma.prisma"
 }
