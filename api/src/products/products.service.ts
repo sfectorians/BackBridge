@@ -12,9 +12,9 @@ export class ProductsService {
 
   async findAll() {
     return await this.prisma.products.findMany({
-   include : {
-    Users : true
-   }
+      include : {
+        user  : true
+      }
     });
   }
 
@@ -24,7 +24,7 @@ export class ProductsService {
         id,
       },
       include : {
-        Users : true
+        user : true
       }
 
     });

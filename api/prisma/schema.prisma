@@ -22,7 +22,7 @@ model Products {
   description String
   createdAt   DateTime @default(now())
 
-  Users   Users? @relation(fields: [usersId], references: [id])
+  user   Users? @relation(fields: [usersId], references: [id])
   usersId Int? // foreign key 
 }
 

@@ -1,3 +1,4 @@
+
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -14,7 +15,9 @@ return response
   }
 
  async  findAllUsers() {
-    return await this.prisma.users.findMany({})
+    return await this.prisma.users.findMany({
+      
+    })
   }
 
   async findOne(id: number) {
