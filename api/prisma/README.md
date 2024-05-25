@@ -17,6 +17,6 @@ nest g resource
 ```
 
 ### to deploy a new migration 
-```powershell
+```bash
 prisma migrate deploy
 ``` 
