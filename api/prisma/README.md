@@ -1,3 +1,8 @@
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <a href="https://www.prisma.io/" target="blank"><img src="https://cdn.worldvectorlogo.com/logos/prisma-2.svg" width="200" alt="prisma Logo" /></a>
+</p>
+
 ### reset database
 ```bash
 prisma migrate reset
