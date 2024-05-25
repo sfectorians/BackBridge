@@ -2,7 +2,6 @@
 ```bash
 prisma migrate reset
 ```
-
 ### to create migration 
 ```bash
 prisma migrate dev
@@ -15,8 +14,11 @@ prisma db seed
 ```bash
 nest g resource
 ```
-
 ### to deploy a new migration 
 ```bash
 prisma migrate deploy
+``` 
+### to install prisma cli
+```bash
+npm i -g prisma
 ``` 
