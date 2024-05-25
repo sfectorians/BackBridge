@@ -35,15 +35,15 @@ npm i -g @nestjs/cli
 ```bash
 npx nest new projectName
 ``` 
-OR 
+If you have nest cli do : 
 ```bash
 nest new projectName
 ``` 
-### to add prisma 
+### to add prisma in your project 
 ```bash
 npx prisma init
 ``` 
-OR 
+If you have prisma CLI do : 
 ```bash
 prisma init
 ``` 
