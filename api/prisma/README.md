@@ -15,3 +15,8 @@ prisma db seed
 ```bash
 nest g resource
 ```
+
+### to deploy a new migration 
+```powershell
+prisma migrate deploy
+``` 
