@@ -22,3 +22,7 @@ prisma migrate deploy
 ```bash
 npm i -g prisma
 ``` 
+### to install nest cli
+```bash
+npm i -g @nestjs/cli
+``` 
