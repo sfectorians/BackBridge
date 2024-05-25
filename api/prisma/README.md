@@ -26,3 +26,19 @@ npm i -g prisma
 ```bash
 npm i -g @nestjs/cli
 ``` 
+### to start a nest project
+```bash
+npx nest new projectName
+``` 
+OR 
+```bash
+nest new projectName
+``` 
+### to add prisma 
+```bash
+npx prisma init
+``` 
+OR 
+```bash
+prisma init
+``` 
